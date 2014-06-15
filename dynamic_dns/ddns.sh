@@ -33,10 +33,10 @@ fi
 
 curl -s -X POST -H "X-NSONE-Key: $APIKEY" -d '{
   "answers": [
-   {
-    "answer": [
-     "'$IPADDR'"
-    ]
-   }
+    {
+      "answer": [
+        "'$IPADDR'"
+      ]
+    }
   ]
 }' https://api.nsone.net/v1/zones/$ZONE/$RECORD/A
