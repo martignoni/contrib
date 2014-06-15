@@ -1,13 +1,10 @@
 #!/bin/bash
 
-IFACE="p4p1"
 APIKEY="keepitsecret-keepitsafe"
 ZONE="domain.com"
 RECORD="mylaptop.domain.com"
 
-
-
-IPADDR=`/sbin/ifconfig $IFACE | egrep "^[[:space:]]+inet addr:" | awk {'print $2'} | cut -d : -f 2`
+IPADDR=`dig +short myip.opendns.com @resolver1.opendns.com`
 
 #copied from http://www.linuxjournal.com/content/validating-ip-address-bash-script
 function valid_ip()
