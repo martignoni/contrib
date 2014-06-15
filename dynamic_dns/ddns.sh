@@ -2,7 +2,7 @@
 
 APIKEY="keepitsecret-keepitsafe"
 ZONE="domain.com"
-RECORD="mylaptop.domain.com"
+RECORDS=("mylaptop.domain.com" "mediaserver.domain.com" "webserver.domain.com")
 
 IPADDR=`dig +short myip.opendns.com @resolver1.opendns.com`
 
@@ -31,12 +31,15 @@ then
   exit
 fi
 
-curl -s -X POST -H "X-NSONE-Key: $APIKEY" -d '{
-  "answers": [
-    {
-      "answer": [
-        "'$IPADDR'"
-      ]
-    }
-  ]
-}' https://api.nsone.net/v1/zones/$ZONE/$RECORD/A
+for RECORD in "${RECORDS[@]}"
+do
+  curl -s -X POST -H "X-NSONE-Key: $APIKEY" -d '{
+    "answers": [
+      {
+        "answer": [
+          "'$IPADDR'"
+        ]
+      }
+    ]
+  }' https://api.nsone.net/v1/zones/$ZONE/$RECORD/A
+done
