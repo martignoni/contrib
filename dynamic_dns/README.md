@@ -9,7 +9,7 @@ See also https://nsone.net/api/
 
 * ddns.sh (bash)
  
-   Update based on local ethernet interface address (linux/unix).
+   Update based on myip.opendns.com lookup.
    Uses curl. 
 
 * NSOne_Dynamic_DNS_AppleScript_Updater.scpt (applescript)
