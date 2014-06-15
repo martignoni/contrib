@@ -27,7 +27,7 @@ function valid_ip()
 valid_ip $IPADDR
 if [ $? -ne 0 ]
 then
-  echo "Couldn't find a valid IP address, your interface might be down or you failed to fill out the 4 obvious lines at the top"
+  echo "Couldn't find a valid IP address, your interface might be down or you failed to fill out correctly the lines at the top"
   exit
 fi
 
